@@ -6,8 +6,8 @@
     <title>Menu del Ristorante</title>
     <style>
         @font-face {
-            font-family: 'UglyQua';
-            src: url('images/UglyQua.ttf') format('truetype');
+            font-family: 'ChristmasElegant';
+            src: url('images/ChristmasElegant.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -17,7 +17,7 @@
             height: 100%;
         }
         body {
-            font-family: 'UglyQua', cursive;
+            font-family: 'ChristmasElegant', cursive;
             background-image: url('images/linen_background_new.png');
             background-repeat: repeat;
             color: #ff0000;
@@ -93,17 +93,6 @@
             max-width: 100%;
             height: auto;
         }
-        .campane {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 200px;
-            z-index: 2;
-        }
-        .campane img {
-            width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
@@ -126,12 +115,13 @@
                 </section>
             </div>
         </div>
-        <div class="campane">
-            <img src="images/campanesmall.png" alt="Campane natalizie">
-        </div>
         <div id="footer-image">
             <img src="images/christmas_image.jpg" alt="Immagine natalizia">
         </div>
     </div>
+    <audio autoplay loop>
+        <source src="images/musica2024.mp3" type="audio/mpeg">
+        Il tuo browser non supporta l'elemento audio.
+    </audio>
 </body>
 </html>
