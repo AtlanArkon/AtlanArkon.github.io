@@ -124,10 +124,15 @@
         Il tuo browser non supporta l'elemento audio.
     </audio>
     <script>
-        document.addEventListener('touchstart', function() {
-            var audio = document.getElementById('backgroundAudio');
-            audio.play();
-        }, { once: true });
+       document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+    var audio = document.getElementById('backgroundAudio');
+    if (audio.paused) {
+        audio.play().catch(function(error) {
+            console.log("Errore nella riproduzione audio:", error);
+        });
+    }
+}, { passive: false });
     </script>
 </body>
 </html>
