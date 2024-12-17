@@ -93,6 +93,12 @@
             max-width: 100%;
             height: auto;
         }
+        #audioToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -119,20 +125,26 @@
             <img src="images/christmas_image.jpg" alt="Immagine natalizia">
         </div>
     </div>
+    <button id="audioToggle">Attiva/Disattiva Musica</button>
     <audio id="backgroundAudio" loop>
         <source src="images/musica2024.mp3" type="audio/mpeg">
         Il tuo browser non supporta l'elemento audio.
     </audio>
     <script>
-       document.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-    var audio = document.getElementById('backgroundAudio');
-    if (audio.paused) {
-        audio.play().catch(function(error) {
-            console.log("Errore nella riproduzione audio:", error);
+        const audioToggle = document.getElementById('audioToggle');
+        const backgroundAudio = document.getElementById('backgroundAudio');
+        let isPlaying = false;
+
+        audioToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                backgroundAudio.pause();
+                audioToggle.textContent = 'Attiva Musica';
+            } else {
+                backgroundAudio.play();
+                audioToggle.textContent = 'Disattiva Musica';
+            }
+            isPlaying = !isPlaying;
         });
-    }
-}, { passive: false });
     </script>
 </body>
 </html>
